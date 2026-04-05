@@ -1,0 +1,14 @@
+<section class="mx-auto w-full max-w-7xl px-4 py-8">
+  <div class="mb-6">
+    <h2 class="text-2xl font-semibold">Products</h2>
+    <p class="mt-2 text-sm text-neutral-500">
+      Product listing structure prepared for later JSON integration.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    @for (product of products; track product.id) {
+      <app-product-card [product]="product"></app-product-card>
+    }
+  </div>
+</section>
