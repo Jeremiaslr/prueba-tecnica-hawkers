@@ -29,17 +29,25 @@ To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use th
 ng test
 ```
 
-## 1. Project setup
+## Project setup
 - The base project is created with Angular.
 - The local Git repository is initialized.
 - The remote GitHub repository is created.
 - The initial project setup is pushed for the first time.
 
-### Step 2. Initial environment setup
-**PR-1**
+
+## ***PR-1***
 
 - The local startup of the Angular project is verified.
 - Angular CLI is configured for local development.
 - Tailwind CSS is installed in the project.
 - Tailwind is integrated through PostCSS.
 - Global styles are prepared to begin the layout implementation.
+
+## ***PR-2***
+
+- The default Angular template is removed.
+- The application structure is organized by feature.
+- The main homepage components are created.
+- A base homepage composition is implemented.
+- The product model is prepared for later data integration.

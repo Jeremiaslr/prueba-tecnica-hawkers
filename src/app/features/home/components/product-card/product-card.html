@@ -1,0 +1,19 @@
+<article class="rounded-2xl border border-neutral-200 p-4 shadow-sm">
+  <div class="mb-4 aspect-square rounded-xl bg-neutral-100"></div>
+
+  <div class="space-y-2">
+    <h3 class="text-lg font-medium">{{ product.title }}</h3>
+    <p class="text-sm text-neutral-500">{{ product.description }}</p>
+    <p class="text-base font-semibold">{{ product.price | currency:'EUR' }}</p>
+
+    <span
+      class="inline-flex rounded-full px-3 py-1 text-xs font-medium"
+      [class.bg-green-100]="product.availability"
+      [class.text-green-700]="product.availability"
+      [class.bg-red-100]="!product.availability"
+      [class.text-red-700]="!product.availability"
+    >
+      {{ product.availability ? 'Available' : 'Unavailable' }}
+    </span>
+  </div>
+</article>
