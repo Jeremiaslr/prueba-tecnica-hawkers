@@ -1,19 +1,22 @@
-<article class="rounded-2xl border border-neutral-200 p-4 shadow-sm">
-  <div class="mb-4 aspect-square rounded-xl bg-neutral-100"></div>
+<article class="group">
+  <div class="flex items-center justify-center">
+    <img
+      [src]="imageUrl"
+      [alt]="product.title"
+      class="block h-auto w-full max-w-[200px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+      loading="lazy"
+    />
+  </div>
 
-  <div class="space-y-2">
-    <h3 class="text-lg font-medium">{{ product.title }}</h3>
-    <p class="text-sm text-neutral-500">{{ product.description }}</p>
-    <p class="text-base font-semibold">{{ product.price | currency:'EUR' }}</p>
+  <div class="flex items-end justify-between gap-3 border-b border-black pb-1">
+    <div class="min-w-0">
+      <p class="truncate text-[11px] uppercase tracking-[0.12em] text-neutral-800">
+        {{ formattedTitle }}
+      </p>
+    </div>
 
-    <span
-      class="inline-flex rounded-full px-3 py-1 text-xs font-medium"
-      [class.bg-green-100]="product.availability"
-      [class.text-green-700]="product.availability"
-      [class.bg-red-100]="!product.availability"
-      [class.text-red-700]="!product.availability"
-    >
-      {{ product.availability ? 'Available' : 'Unavailable' }}
-    </span>
+    <div class="shrink-0 bg-black px-2 py-[3px] text-[12px] font-semibold text-white">
+      {{ formattedPrice }}
+    </div>
   </div>
 </article>
