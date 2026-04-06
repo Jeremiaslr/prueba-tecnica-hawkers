@@ -11,4 +11,16 @@ import { Product } from '../../../../core/models/product.model';
 })
 export class ProductCardComponent {
   @Input({ required: true }) product!: Product;
+
+  get imageUrl(): string {
+    return this.product.images?.[0] || 'assets/images/product-placeholder.png';
+  }
+
+  get formattedTitle(): string {
+    return this.product.title.toUpperCase();
+  }
+
+  get formattedPrice(): string {
+    return `${Math.round(this.product.price)}€`;
+  }
 }

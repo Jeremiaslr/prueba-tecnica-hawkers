@@ -51,3 +51,15 @@ ng test
 - The main homepage components are created.
 - A base homepage composition is implemented.
 - The product model is prepared for later data integration.
+
+## ***PR-3***
+
+- Added a real local video to the hero section
+- Implemented the promotional banner composition
+- Adjusted the top layout proportions to better match the provided design
+
+## ***PR-4***
+
+- The product section is connected to the real JSON dataset.
+- The product cards are redesigned to better match the provided layout.
+- A temporary limit of 6 rendered products is applied for the current visual phase.

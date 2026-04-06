@@ -1,41 +1,22 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { map } from 'rxjs';
 import { Product } from '../../../../core/models/product.model';
+import { ProductsService } from '../../../../core/services/products.service';
 import { ProductCardComponent } from '../product-card/product-card';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductCardComponent],
+  imports: [CommonModule, ProductCardComponent],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss',
 })
-
-//TODO: implement real products
 export class ProductListComponent {
-    products: Product[] = [
-    {
-      id: '1',
-      title: 'Sample Product 1',
-      description: 'Sample product description',
-      price: 44.99,
-      images: [],
-      availability: true,
-    },
-    {
-      id: '2',
-      title: 'Sample Product 2',
-      description: 'Sample product description',
-      price: 59.99,
-      images: [],
-      availability: true,
-    },
-    {
-      id: '3',
-      title: 'Sample Product 3',
-      description: 'Sample product description',
-      price: 39.99,
-      images: [],
-      availability: false,
-    },
-  ];
+  private readonly productsService = inject(ProductsService);
+  // TODO: Sustituir el slice(0, 6) temporal por una lógica de carga progresiva.
+  // La implementación final deberá renderizar más productos por bloques cuando el usuario llegue al final de la página (scroll infinito / lazy load).
+  readonly products$ = this.productsService.getProducts().pipe(
+    map((products: Product[]) => products.slice(0, 6))
+  );
 }
