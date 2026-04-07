@@ -1,16 +1,22 @@
 <article class="group">
-  <div class="flex items-center justify-center">
+  <button
+    type="button"
+    class="mb-1 flex w-full cursor-pointer items-center justify-center"
+    (click)="onSelectProduct()"
+    [attr.aria-label]="'Open details for ' + product.title"
+  >
     <img
       [src]="imageUrl"
       [alt]="product.title"
-      class="block h-auto w-full max-w-[200px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+      (error)="onImageError($event)"
+      class="block h-auto w-full max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-[1.10]"
       loading="lazy"
     />
-  </div>
+  </button>
 
   <div class="flex items-end justify-between gap-3 border-b border-black pb-1">
     <div class="min-w-0">
-      <p class="truncate text-[11px] uppercase tracking-[0.12em] text-neutral-800">
+      <p class="truncate text-[11px] uppercase tracking-[0.14em] text-neutral-800">
         {{ formattedTitle }}
       </p>
     </div>

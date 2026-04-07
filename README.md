@@ -63,3 +63,11 @@ ng test
 - The product section is connected to the real JSON dataset.
 - The product cards are redesigned to better match the provided layout.
 - A temporary limit of 6 rendered products is applied for the current visual phase.
+
+## ***PR-5***
+
+- Added a product modal opened from the product listing
+- Implemented product detail rendering inside the modal
+- Added a simple zoom interaction for the product image
+- Added close interactions through button, overlay click, and Escape key
+- Added local fallback images to handle failures from the external image server
