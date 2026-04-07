@@ -1,7 +1,7 @@
 <article class="group">
   <button
     type="button"
-    class="mb-1 flex w-full cursor-pointer items-center justify-center"
+    class="mb-1 flex h-[120px] w-full cursor-pointer items-center justify-center sm:h-[150px] lg:h-[165px]"
     (click)="onSelectProduct()"
     [attr.aria-label]="'Open details for ' + product.title"
   >
@@ -9,19 +9,19 @@
       [src]="imageUrl"
       [alt]="product.title"
       (error)="onImageError($event)"
-      class="block h-auto w-full max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-[1.10]"
+      class="block max-h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.10]"
       loading="lazy"
     />
   </button>
 
   <div class="flex items-end justify-between gap-3 border-b border-black pb-1">
     <div class="min-w-0">
-      <p class="truncate text-[11px] uppercase tracking-[0.14em] text-neutral-800">
+      <p class="truncate text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-neutral-800">
         {{ formattedTitle }}
       </p>
     </div>
 
-    <div class="shrink-0 bg-black px-2 py-[3px] text-[12px] font-semibold text-white">
+    <div class="shrink-0 bg-black px-2 py-[3px] text-[11px] sm:text-[12px] font-semibold text-white">
       {{ formattedPrice }}
     </div>
   </div>
