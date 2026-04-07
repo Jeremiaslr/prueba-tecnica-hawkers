@@ -20,7 +20,6 @@ import { ProductModalComponent } from '../product-modal/product-modal';
   standalone: true,
   imports: [CommonModule, ProductCardComponent, ProductModalComponent],
   templateUrl: './product-list.html',
-  styleUrl: './product-list.scss',
 })
 export class ProductListComponent implements AfterViewInit, OnDestroy {
   private readonly productsService = inject(ProductsService);

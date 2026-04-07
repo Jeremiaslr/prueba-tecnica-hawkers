@@ -4,7 +4,6 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   selector: 'app-hero-section',
   imports: [],
   templateUrl: './hero-section.html',
-  styleUrl: './hero-section.scss',
 })
 export class HeroSectionComponent implements AfterViewInit {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;

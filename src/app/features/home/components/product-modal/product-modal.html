@@ -1,13 +1,13 @@
 <div
-  class="modal-overlay fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6 transition-opacity duration-200"
+  class="modal-overlay fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-2 sm:px-4 py-4 sm:py-6 transition-opacity duration-200"
   (click)="onOverlayClick($event)"
 >
   <div
-    class="relative w-full max-w-5xl bg-white shadow-2xl transition-all duration-300 ease-out animate-[modalIn_0.28s_ease-out]"
+    class="relative w-full max-w-5xl max-h-[92vh] overflow-y-auto bg-white shadow-2xl transition-all duration-300 ease-out animate-[modalIn_0.28s_ease-out]"
   >
     <button
       type="button"
-      class="absolute cursor-pointer right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black text-white transition-transform duration-200 hover:scale-105"
+      class="absolute cursor-pointer right-4 top-4 sm:right-5 sm:top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black text-white ring-2 ring-white/90 transition-transform duration-200 hover:scale-105"
       (click)="close()"
       aria-label="Cerrar modal"
     >
@@ -15,7 +15,7 @@
     </button>
 
     <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr]">
-      <div class="flex items-center justify-center bg-[#f4f4f4] p-6 lg:p-10">
+      <div class="flex items-center justify-center bg-[#f4f4f4] p-4 sm:p-6 lg:p-10">
         <button
           type="button"
           class="w-full overflow-hidden cursor-zoom-in"
@@ -29,15 +29,15 @@
           (mousemove)="onImageMouseMove($event)"
           (mouseleave)="onImageMouseLeave()"
           [style.transform-origin]="zoomOrigin"
-          class="mx-auto block max-h-[78vh] w-auto max-w-full object-contain transition-transform duration-300 ease-out"
+          class="mx-auto block max-h-[52vh] sm:max-h-[65vh] lg:max-h-[78vh] w-auto max-w-full object-contain transition-transform duration-300 ease-out"
           [class.scale-150]="zoomed"
           [class.cursor-zoom-out]="zoomed"
         />
         </button>
       </div>
 
-      <div class="flex flex-col justify-center p-6 lg:p-10">
-        <h2 class="mb-4 text-xl font-semibold uppercase tracking-[0.08em] text-neutral-900">
+      <div class="flex flex-col justify-center p-4 sm:p-6 lg:p-10">
+        <h2 class="mb-4 text-lg sm:text-xl font-semibold uppercase tracking-[0.08em] text-neutral-900">
           {{ product.title }}
         </h2>
 
