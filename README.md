@@ -71,3 +71,9 @@ ng test
 - Added a simple zoom interaction for the product image
 - Added close interactions through button, overlay click, and Escape key
 - Added local fallback images to handle failures from the external image server
+
+## ***PR-6***
+
+- Implemented incremental product loading in blocks of 10 while scrolling to the end of the listing
+- Stabilized the infinite scroll observer behavior to avoid chained over-loading
+- Configured Open Sans as the global application font

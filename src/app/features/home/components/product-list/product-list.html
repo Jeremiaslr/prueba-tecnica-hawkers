@@ -1,13 +1,17 @@
 <section class="mx-auto w-full max-w-[1050px] px-4 pt-1 pb-10">
   @if (products$ | async; as products) {
     <div class="grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
-      @for (product of products; track product.id) {
+      @for (product of products.slice(0, visibleCount); track product.id) {
         <app-product-card
           [product]="product"
           (productSelected)="openProductModal($event)"
         ></app-product-card>
       }
     </div>
+
+    @if (hasMoreProducts(products.length)) {
+      <div #scrollAnchor class="h-1 w-full" aria-hidden="true"></div>
+    }
   }
 
   @if (selectedProduct) {
