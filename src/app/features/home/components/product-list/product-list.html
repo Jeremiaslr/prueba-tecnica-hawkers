@@ -2,8 +2,18 @@
   @if (products$ | async; as products) {
     <div class="grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
       @for (product of products; track product.id) {
-        <app-product-card [product]="product"></app-product-card>
+        <app-product-card
+          [product]="product"
+          (productSelected)="openProductModal($event)"
+        ></app-product-card>
       }
     </div>
+  }
+
+  @if (selectedProduct) {
+    <app-product-modal
+      [product]="selectedProduct"
+      (closeModal)="closeProductModal()"
+    ></app-product-modal>
   }
 </section>
