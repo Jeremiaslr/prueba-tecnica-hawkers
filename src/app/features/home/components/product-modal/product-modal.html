@@ -7,7 +7,7 @@
   >
     <button
       type="button"
-      class="absolute cursor-pointer right-4 top-4 sm:right-5 sm:top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black text-white ring-2 ring-white/90 transition-transform duration-200 hover:scale-105"
+      class="absolute right-4 top-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-black text-white outline-none ring-2 ring-white/90 transition-[transform,background-color,box-shadow] duration-200 hover:bg-neutral-900 hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:right-5 sm:top-5"
       (click)="close()"
       aria-label="Cerrar modal"
     >
@@ -18,7 +18,7 @@
       <div class="flex items-center justify-center bg-[#f4f4f4] p-4 sm:p-6 lg:p-10">
         <button
           type="button"
-          class="w-full overflow-hidden cursor-zoom-in"
+          class="w-full cursor-zoom-in overflow-hidden rounded-sm outline-none transition-[box-shadow,background-color] duration-200 hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f4f4]"
           (click)="toggleZoom()"
           aria-label="Ampliar imagen del producto"
         >
@@ -36,8 +36,12 @@
         </button>
       </div>
 
-      <div class="flex flex-col justify-center p-4 sm:p-6 lg:p-10">
-        <h2 class="mb-4 text-lg sm:text-xl font-semibold uppercase tracking-[0.08em] text-neutral-900">
+      <div
+        class="flex flex-col justify-center p-4 sm:p-6 lg:px-10 lg:pb-10 lg:pt-14 lg:pr-[4.75rem]"
+      >
+        <h2
+          class="mb-4 break-words text-lg font-semibold uppercase tracking-[0.08em] text-neutral-900 sm:text-xl lg:max-w-full"
+        >
           {{ product.title }}
         </h2>
 

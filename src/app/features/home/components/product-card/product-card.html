@@ -1,20 +1,30 @@
 <article class="group">
   <button
     type="button"
-    class="mb-1 flex h-[120px] w-full cursor-pointer items-center justify-center sm:h-[150px] lg:h-[165px]"
+    class="relative mb-1 flex h-[120px] w-full cursor-pointer items-center justify-center rounded-sm sm:h-[150px] lg:h-[165px] outline-none transition-colors duration-200 hover:bg-neutral-50 focus-visible:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
     (click)="onSelectProduct()"
     [attr.aria-label]="'Open details for ' + product.title"
   >
+    @if (imageLoading()) {
+      <span class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white/60">
+        <app-spinner size="sm" ariaLabel="Cargando imagen del producto" />
+      </span>
+    }
     <img
       [src]="imageUrl"
       [alt]="product.title"
+      (load)="onImageLoad()"
       (error)="onImageError($event)"
-      class="block max-h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.10]"
+      class="relative z-0 block max-h-full w-auto max-w-full object-contain transition-all duration-300 group-hover:scale-[1.10]"
+      [class.opacity-0]="imageLoading()"
+      [class.opacity-100]="!imageLoading()"
       loading="lazy"
     />
   </button>
 
-  <div class="flex items-end justify-between gap-3 border-b border-black pb-1">
+  <div
+    class="flex items-end justify-between gap-3 border-b border-black pb-1 transition-colors duration-200 group-hover:border-neutral-700"
+  >
     <div class="min-w-0">
       <p class="truncate text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-neutral-800">
         {{ formattedTitle }}
