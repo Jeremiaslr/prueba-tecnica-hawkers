@@ -23,13 +23,6 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
 
 ## Project setup
 - The base project is created with Angular.
@@ -79,3 +72,12 @@ ng test
 - Implemented incremental product loading in blocks of 10 while scrolling to the end of the listing
 - Stabilized the infinite scroll observer behavior to avoid chained over-loading
 - Configured Open Sans as the global application font
+
+## ***PR-7***
+
+- Refined responsive layout for the hero, promotional grid, product listing, and product modal (breakpoints, spacing, and modal scroll on small viewports).
+- Added a scroll-to-top floating control with smooth scrolling and different scroll thresholds for mobile, tablet, and desktop.
+- Introduced a shared UI layer with a reusable Spinner component.
+
+- Improved hover and focus-visible states on product cards, the scroll-to-top button, and modal controls for clearer keyboard and pointer feedback.
+- Adjusted the product modal so long titles no longer collide with the close button (extra padding and break-words on desktop layouts).
